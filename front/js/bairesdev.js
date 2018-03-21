@@ -4,7 +4,6 @@ app.controller('users', function($scope,$http,$window) {
   $scope.user={};
 
   $http.get('http://localhost:3000/').then(function(data){
-    console.log(data)
     $scope.users = data.data;
   }, function(data,status){
     console.error(data,status)
