@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <script type="text/javascript" src="js/bairesdev.js"></script>
 </head>
 <body ng-controller="users">
@@ -28,6 +29,7 @@
             <th>Last Name</th>
             <th>Age</th>
             <th>Email</th>
+            <th>Actions</th>
           </thead>
           <tbody>
             <tr ng-repeat="user in users">
@@ -36,6 +38,7 @@
               <td>{{user.last_name}}</td>
               <td>{{user.age}}</td>
               <td>{{user.email}}</td>
+              <td> <button> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button> | <button><i class="fa fa-trash" aria-hidden="true"></i></button></td>
             </tr>
           </table>
         </div>

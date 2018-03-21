@@ -7,6 +7,9 @@ var mongoSanitize = require('express-mongo-sanitize');
 var exphbs        = require('express-handlebars');
 var http          = require('http');
 
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -22,19 +25,21 @@ app.get('/', function (req, res) {
         console.log(users)
         res.send(users);
       });
+      db.close();
     }else{
       //RISE EXCEPTION
       throw err
     }
+
   })
 })
 
 // CREATE NEW USER
 app.post('/create', function (req, res) {
-  console.log(req)
+  console.log(req.body)
   MongoClient.connect("mongodb://localhost/bairesdev", function(err, db) {
     if(!err){
-      var user = { first_name: req.params.first_name, last_name: req.params.last_name, age:req.params.age, email: req.params.email};
+      var user = { first_name: req.body.first_name, last_name: req.body.last_name, age:req.body.age, email: req.body.email};
       db.collection("users").insertOne(user, function(err, response) {
         if (err) throw err;
         console.log("1 document inserted");
