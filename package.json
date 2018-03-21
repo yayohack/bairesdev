@@ -1,0 +1,29 @@
+{
+  "name": "Bairesdev",
+  "version": "1.0.0",
+  "description": "Bairesdev api",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
+    "express-mongo-sanitize": "^1.3.2",
+    "http": "0.0.0",
+    "mongodb": "^2.2.30",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://yayoyo0@bitbucket.org/yayoyo0/bairesdev.git"
+  },
+  "keywords": [
+    "PointsNearby"
+  ],
+  "author": "yayohack@gmail.com",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/yayoyo0/bairesdev#readme"
+}
